@@ -37,6 +37,13 @@ public class NewFrame extends JFrame implements ActionListener{
 		saveItem.addActionListener(this);
 		exitItem.addActionListener(this);
 		
+		/* keyboard shortcut adder */
+		filemenu.setMnemonic(KeyEvent.VK_F); // "Alt-Key+f" for selecting File
+		editmenu.setMnemonic(KeyEvent.VK_E); // "Alt-Key+e" for selecting Edit
+		helpmenu.setMnemonic(KeyEvent.VK_H); //"Alt-Key+h" for selecting Help
+		loadItem.setMnemonic(KeyEvent.VK_L); // l for load
+		saveItem.setMnemonic(KeyEvent.VK_S); // s for save
+		exitItem.setMnemonic(KeyEvent.VK_E); // e for exit
 		
 		// adding children or menu items to the "file" menu
 		filemenu.add(loadItem);
@@ -69,6 +76,10 @@ public class NewFrame extends JFrame implements ActionListener{
 		else if(e.getSource() == exitItem) {
 			System.out.println("Exiting the window......");
 			dispose(); // to kill the window
+			/*
+   			* Or,
+      			* System.exit(0);
+			*/
 		}
 		
 	}
